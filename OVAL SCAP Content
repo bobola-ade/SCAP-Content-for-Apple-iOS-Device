@@ -1,1 +1,1015 @@
 
+<oval_definitions xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:ind="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:unix="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" xmlns:linux="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" xmlns:macos="http://oval.mitre.org/XMLSchema/oval-definitions-5#macos" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd   http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
+
+ <generator>
+    <oval:product_name>Enhanced SCAP Content Editor (eSCAPe)</oval:product_name>
+    <oval:product_version>1.2.2</oval:product_version>
+    <oval:schema_version>5.3</oval:schema_version>
+    <oval:timestamp>2017-04-21T10:56:11</oval:timestamp>
+  </generator>
+  <definitions>
+      <definition class="compliance" id="oval:scap:def:001" version="1">
+          <metadata>
+              <title>Key "minLength" = "6"</title>
+              <affected family="macos">
+                  <platform>Apple iOS 10 </platform>
+              </affected>
+              <reference ref_id="PLIST_CCE" source="CCE"/>
+              <description>Check if  "minLength" is = "6" .</description>
+          </metadata>
+          <criteria>
+              <criterion comment="minLength = 6" test_ref="oval:scap:tst:019"/>
+          </criteria>
+      </definition>
+      <tests><macos:plist_test check="at least one" id="oval:scap:tst:019" version="1">
+          <macos:object object_ref="oval:scap:obj:020"/>
+          <macos:state state_ref="oval:scap:ste:019"/>
+      </macos:plist_test>
+</tests>
+<objects>
+    <macos:plist_object id="oval:scap:obj:020" version="1">
+        <macos:key>minLength</macos:key>
+        <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+    </macos:plist_object>
+
+</objects>
+<states>
+    <macos:plist_state id="oval:scap:ste:019" version="1">
+        <macos:value datatype="string" operation="equals">6</macos:value>
+    </macos:plist_state>
+</states>
+
+
+
+
+      <definition class="compliance" id="oval:scap:def:002" version="1">
+          <metadata>
+              <title>Key "maxFailedAttempts" = "10"</title>
+              <affected family="macos">
+                  <platform>Apple iOS 10 </platform>
+              </affected>
+              <reference ref_id="PLIST_CCE" source="CCE"/>
+              <description>Check if  "maxFailedAttempts" is = "10" .</description>
+          </metadata>
+          <criteria>
+              <criterion comment="maxFailedAttempts = 10" test_ref="oval:scap:tst:031"/>
+          </criteria>
+      </definition>
+      <tests><macos:plist_test check="at least one" id="oval:scap:tst:031" version="1">
+          <macos:object object_ref="oval:scap:obj:032"/>
+          <macos:state state_ref="oval:scap:ste:032"/>
+      </macos:plist_test>
+
+      </tests>
+      <objects>
+          <macos:plist_object id="oval:scap:obj:032" version="1">
+              <macos:key>maxFailedAttempts</macos:key>
+              <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+          </macos:plist_object>
+        </objects>
+        <states>
+            <macos:plist_state id="oval:scap:ste:032" version="1">
+                <macos:value datatype="string" operation="equals">10</macos:value>
+            </macos:plist_state>
+
+      </states>
+
+
+    <definition class="compliance" id="oval:scap:def:003" version="1">
+      <metadata>
+        <title>Key "forceEncryptedBackup" = "true"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "forceEncryptedBackup" is = "true" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="forceEncryptedBackup = true" test_ref="oval:scap:tst:003"/>
+      </criteria>
+    </definition>
+    <tests><macos:plist_test check="at least one" id="oval:scap:tst:003" version="1">
+        <macos:object object_ref="oval:scap:obj:003"/>
+        <macos:state state_ref="oval:scap:ste:003"/>
+    </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:003" version="1">
+            <macos:key>forceEncryptedBackup</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:003" version="1">
+            <macos:value datatype="string" operation="equals">true</macos:value>
+        </macos:plist_state>
+    </states>
+
+    <definition class="compliance" id="oval:scap:def:004" version="1">
+      <metadata>
+        <title>Key "PreventMove" = "true"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "PreventMove" is = "true" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="PreventMove = true" test_ref="oval:scap:tst:004"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:004" version="1">
+        <macos:object object_ref="oval:scap:obj:004"/>
+        <macos:state state_ref="oval:scap:ste:004"/>
+    </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:004" version="1">
+            <macos:key>PreventMove</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:004" version="1">
+            <macos:value datatype="string" operation="equals">true</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:005" version="1">
+        <metadata>
+            <title>Key "maxGracePeriod" = "5"</title>
+            <affected family="macos">
+                <platform>Apple iOS 10 </platform>
+            </affected>
+            <reference ref_id="PLIST_CCE" source="CCE"/>
+            <description>Check if  "maxGracePeriod" is = "5" .</description>
+        </metadata>
+        <criteria>
+            <criterion comment="maxGracePeriod = 5" test_ref="oval:scap:tst:016"/>
+        </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:016" version="1">
+        <macos:object object_ref="oval:scap:obj:017"/>
+        <macos:state state_ref="oval:scap:ste:016"/>
+    </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:017" version="1">
+            <macos:key>maxGracePeriod</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:016" version="1">
+            <macos:value datatype="string" operation="equals">5</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:006" version="1">
+        <metadata>
+            <title>Key "allowDiagnosticSubmission" = "false"</title>
+            <affected family="macos">
+                <platform>Apple iOS 10 </platform>
+            </affected>
+            <reference ref_id="PLIST_CCE" source="CCE"/>
+            <description>Check if  "allowDiagnosticSubmission" is = "false" .</description>
+        </metadata>
+        <criteria>
+            <criterion comment="allowDiagnosticSubmission = false" test_ref="oval:scap:tst:001"/>
+        </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:001" version="1">
+            <macos:object object_ref="oval:scap:obj:001"/>
+            <macos:state state_ref="oval:scap:ste:001"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:001" version="1">
+            <macos:key>allowDiagnosticSubmission</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:001" version="1">
+            <macos:value datatype="string" operation="equals">false</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:007" version="1">
+        <metadata>
+            <title>Key "pinHistory" = "3"</title>
+            <affected family="macos">
+                <platform>Apple iOS 10 </platform>
+            </affected>
+            <reference ref_id="PLIST_CCE" source="CCE"/>
+            <description>Check if  "pinHistory" is = "3" .</description>
+        </metadata>
+        <criteria>
+            <criterion comment="pinHistory = 3" test_ref="oval:scap:tst:006"/>
+        </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:006" version="1">
+            <macos:object object_ref="oval:scap:obj:006"/>
+            <macos:state state_ref="oval:scap:ste:006"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:006" version="1">
+            <macos:key>pinHistory</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:006" version="1">
+            <macos:value datatype="string" operation="equals">3</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:008" version="1">
+      <metadata>
+        <title>Key "allowScreenShot" = "false"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "allowScreenShot" is = "false" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="allowScreenShot = false" test_ref="oval:scap:tst:005"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:005" version="1">
+            <macos:object object_ref="oval:scap:obj:005"/>
+            <macos:state state_ref="oval:scap:ste:005"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:005" version="1">
+            <macos:key>allowScreenShot</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:005" version="1">
+            <macos:value datatype="string" operation="equals">false</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:009" version="1">
+        <metadata>
+            <title>Key "safariAllowPopups" = "false"</title>
+            <affected family="macos">
+                <platform>Apple iOS 10 </platform>
+            </affected>
+            <reference ref_id="PLIST_CCE" source="CCE"/>
+            <description>Check if  "safariAllowPopups" is = "false" .</description>
+        </metadata>
+        <criteria>
+            <criterion comment="safariAllowPopups = false" test_ref="oval:scap:tst:002"/>
+        </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:002" version="1">
+            <macos:object object_ref="oval:scap:obj:002"/>
+            <macos:state state_ref="oval:scap:ste:002"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:002" version="1">
+            <macos:key>safariAllowPopups</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:002" version="1">
+            <macos:value datatype="string" operation="equals">false</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:010" version="1">
+      <metadata>
+        <title>Key "maxPINAgeInDays" = "120"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "maxPINAgeInDays" is = "120" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="maxPINAgeInDays = 120" test_ref="oval:scap:tst:007"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:007" version="1">
+            <macos:object object_ref="oval:scap:obj:007"/>
+            <macos:state state_ref="oval:scap:ste:007"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:007" version="1">
+            <macos:key>maxPINAgeInDays</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:007" version="1">
+            <macos:value datatype="string" operation="equals">120</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:011" version="1">
+      <metadata>
+        <title>Key "CardDAVUseSSL" = "true"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "CardDAVUseSSL" is = "true" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="CardDAVUseSSL = true" test_ref="oval:scap:tst:008"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:008" version="1">
+            <macos:object object_ref="oval:scap:obj:008"/>
+            <macos:state state_ref="oval:scap:ste:008"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:008" version="1">
+            <macos:key>CardDAVUseSSL</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:008" version="1">
+            <macos:value datatype="string" operation="equals">true</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:012" version="1">
+      <metadata>
+        <title>Key "SignMessage" = "true"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "SignMessage" is = "true" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="SignMessage = true" test_ref="oval:scap:tst:009"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:009" version="1">
+            <macos:object object_ref="oval:scap:obj:010"/>
+            <macos:state state_ref="oval:scap:ste:009"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:010" version="1">
+            <macos:key>SignMessage</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:009" version="1">
+            <macos:value datatype="string" operation="equals">true</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:013" version="1">
+      <metadata>
+        <title>Key "CheckOutWhenRemoved" = "true"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "CheckOutWhenRemoved" is = "true" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="CheckOutWhenRemoved = true" test_ref="oval:scap:tst:010"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:010" version="1">
+            <macos:object object_ref="oval:scap:obj:011"/>
+            <macos:state state_ref="oval:scap:ste:010"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:011" version="1">
+            <macos:key>CheckOutWhenRemoved</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:010" version="1">
+            <macos:value datatype="string" operation="equals">true</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:014" version="1">
+      <metadata>
+        <title>Key "requireAlphanumeric" = "true"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "requireAlphanumeric" is = "true" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="requireAlphanumeric = true" test_ref="oval:scap:tst:011"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:011" version="1">
+            <macos:object object_ref="oval:scap:obj:012"/>
+            <macos:state state_ref="oval:scap:ste:011"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:012" version="1">
+            <macos:key>requireAlphanumeric</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:011" version="1">
+            <macos:value datatype="string" operation="equals">true</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:015" version="1">
+      <metadata>
+        <title>Key "IncomingMailServerUseSSL" = "true"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "IncomingMailServerUseSSL" is = "true" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="IncomingMailServerUseSSL = true" test_ref="oval:scap:tst:012"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:012" version="1">
+            <macos:object object_ref="oval:scap:obj:013"/>
+            <macos:state state_ref="oval:scap:ste:012"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:013" version="1">
+            <macos:key>IncomingMailServerUseSSL</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:012" version="1">
+            <macos:value datatype="string" operation="equals">true</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:016" version="1">
+      <metadata>
+        <title>Key "LDAPAccountUseSSL" = "true"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "LDAPAccountUseSSL" is = "true" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="LDAPAccountUseSSL = true" test_ref="oval:scap:tst:013"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:013" version="1">
+            <macos:object object_ref="oval:scap:obj:014"/>
+            <macos:state state_ref="oval:scap:ste:013"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:014" version="1">
+            <macos:key>LDAPAccountUseSSL</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:013" version="1">
+            <macos:value datatype="string" operation="equals">true</macos:value>
+        </macos:plist_state>
+    </states>
+
+    <definition class="compliance" id="oval:scap:def:017" version="1">
+        <metadata>
+            <title>Key "maxInactivity" = "5"</title>
+            <affected family="macos">
+                <platform>Apple iOS 10 </platform>
+            </affected>
+            <reference ref_id="PLIST_CCE" source="CCE"/>
+            <description>Check if  "maxInactivity" is = "5" .</description>
+        </metadata>
+        <criteria>
+            <criterion comment="maxInactivity = 5" test_ref="oval:scap:tst:017"/>
+        </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:017" version="1">
+            <macos:object object_ref="oval:scap:obj:018"/>
+            <macos:state state_ref="oval:scap:ste:017"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:018" version="1">
+            <macos:key>maxInactivity</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:017" version="1">
+            <macos:value datatype="string" operation="equals">5</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:018" version="1">
+        <metadata>
+            <title>Key "allowSimple" = "false"</title>
+            <affected family="macos">
+                <platform>Apple iOS 10 </platform>
+            </affected>
+            <reference ref_id="PLIST_CCE" source="CCE"/>
+            <description>Check if  "allowSimple" is = "false" .</description>
+        </metadata>
+        <criteria>
+            <criterion comment="allowSimple = false" test_ref="oval:scap:tst:029"/>
+        </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:029" version="1">
+            <macos:object object_ref="oval:scap:obj:030"/>
+            <macos:state state_ref="oval:scap:ste:030"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:030" version="1">
+            <macos:key>allowSimple</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:030" version="1">
+            <macos:value datatype="string" operation="equals">false</macos:value>
+        </macos:plist_state>
+
+    </states>
+
+    <definition class="compliance" id="oval:scap:def:019" version="1">
+      <metadata>
+        <title>Key "minComplexChars" = "1"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "minComplexChars" is = "1" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="minComplexChars = 1" test_ref="oval:scap:tst:014"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:014" version="1">
+            <macos:object object_ref="oval:scap:obj:015"/>
+            <macos:state state_ref="oval:scap:ste:014"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:015" version="1">
+            <macos:key>minComplexChars</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:014" version="1">
+            <macos:value datatype="string" operation="equals">1</macos:value>
+        </macos:plist_state>
+    </states>
+
+    <definition class="compliance" id="oval:scap:def:020" version="1">
+      <metadata>
+        <title>Key "allowAppInstallation" = "false"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "allowAppInstallation" is = "false" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="allowAppInstallation = false" test_ref="oval:scap:tst:015"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:015" version="1">
+            <macos:object object_ref="oval:scap:obj:016"/>
+            <macos:state state_ref="oval:scap:ste:015"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:016" version="1">
+            <macos:key>allowAppInstallation</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:015" version="1">
+            <macos:value datatype="string" operation="equals">false</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:021" version="1">
+      <metadata>
+        <title>Key "safariForceFraudWarning" = "true"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "safariForceFraudWarning" is = "true" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="safariForceFraudWarning = true" test_ref="oval:scap:tst:018"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:018" version="1">
+            <macos:object object_ref="oval:scap:obj:019"/>
+            <macos:state state_ref="oval:scap:ste:018"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:019" version="1">
+            <macos:key>safariForceFraudWarning</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:018" version="1">
+            <macos:value datatype="string" operation="equals">true</macos:value>
+        </macos:plist_state>
+    </states>
+
+    <definition class="compliance" id="oval:scap:def:022" version="1">
+      <metadata>
+        <title>Key "allowUntrustedTLSPrompt" = "false"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "allowUntrustedTLSPrompt" is = "false" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="allowUntrustedTLSPrompt = false" test_ref="oval:scap:tst:020"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:020" version="1">
+            <macos:object object_ref="oval:scap:obj:021"/>
+            <macos:state state_ref="oval:scap:ste:020"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:021" version="1">
+            <macos:key>allowUntrustedTLSPrompt</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:020" version="1">
+            <macos:value datatype="string" operation="equals">false</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:023" version="1">
+      <metadata>
+        <title>Key "CalDAVUseSSL" = "true"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "CalDAVUseSSL" is = "true" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="CalDAVUseSSL = true" test_ref="oval:scap:tst:021"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:021" version="1">
+            <macos:object object_ref="oval:scap:obj:022"/>
+            <macos:state state_ref="oval:scap:ste:021"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:022" version="1">
+            <macos:key>CalDAVUseSSL</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:021" version="1">
+            <macos:value datatype="string" operation="equals">true</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:024" version="1">
+      <metadata>
+        <title>Key "PreventMove" = "true"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "PreventMove" is = "true" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="PreventMove = true" test_ref="oval:scap:tst:022"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:022" version="1">
+            <macos:object object_ref="oval:scap:obj:023"/>
+            <macos:state state_ref="oval:scap:ste:022"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:023" version="1">
+            <macos:key>PreventMove</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:022" version="1">
+            <macos:value datatype="string" operation="equals">true</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:025" version="1">
+      <metadata>
+        <title>Key "allowPhotoStream" = "false"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "allowPhotoStream" is = "false" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="allowPhotoStream = false" test_ref="oval:scap:tst:023"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:023" version="1">
+            <macos:object object_ref="oval:scap:obj:024"/>
+            <macos:state state_ref="oval:scap:ste:023"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:024" version="1">
+            <macos:key>allowPhotoStream</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:023" version="1">
+            <macos:value datatype="string" operation="equals">false</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:026" version="1">
+      <metadata>
+        <title>Key "allowCloudBackup" = "false"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "allowCloudBackup" is = "false" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="allowCloudBackup = false" test_ref="oval:scap:tst:024"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:024" version="1">
+            <macos:object object_ref="oval:scap:obj:025"/>
+            <macos:state state_ref="oval:scap:ste:024"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:025" version="1">
+            <macos:key>allowCloudBackup</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:024" version="1">
+            <macos:value datatype="string" operation="equals">false</macos:value>
+        </macos:plist_state>
+    </states>
+
+    <definition class="compliance" id="oval:scap:def:027" version="1">
+      <metadata>
+        <title>Key "SSL" = "true"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "SSL" is = "true" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="SSL = true" test_ref="oval:scap:tst:025"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:025" version="1">
+            <macos:object object_ref="oval:scap:obj:026"/>
+            <macos:state state_ref="oval:scap:ste:025"/>
+            </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:026" version="1">
+            <macos:key>SSL</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:025" version="1">
+            <macos:value datatype="string" operation="equals">true</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:028" version="1">
+      <metadata>
+        <title>Key "safariAllowAutoFill" = "false"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "safariAllowAutoFill" is = "false" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="safariAllowAutoFill = false" test_ref="oval:scap:tst:026"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:026" version="1">
+            <macos:object object_ref="oval:scap:obj:027"/>
+            <macos:state state_ref="oval:scap:ste:027"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:027" version="1">
+            <macos:key>safariAllowAutoFill</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:027" version="1">
+            <macos:value datatype="string" operation="equals">false</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:029" version="1">
+      <metadata>
+        <title>Key "allowCloudDocumentSync" = "false"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "allowCloudDocumentSync" is = "false" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="allowCloudDocumentSync = false" test_ref="oval:scap:tst:027"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:027" version="1">
+            <macos:object object_ref="oval:scap:obj:028"/>
+            <macos:state state_ref="oval:scap:ste:028"/>
+        </macos:plist_test>
+    </tests>
+    <objects> <macos:plist_object id="oval:scap:obj:028" version="1">
+        <macos:key>allowCloudDocumentSync</macos:key>
+        <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+    </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:028" version="1">
+            <macos:value datatype="string" operation="equals">false</macos:value>
+        </macos:plist_state>
+    </states>
+        <definition class="compliance" id="oval:scap:def:031" version="1">
+      <metadata>
+        <title>Key "SMIMEEnabled" = "true"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "SMIMEEnabled" is = "true" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="SMIMEEnabled = true" test_ref="oval:scap:tst:030"/>
+      </criteria>
+    </definition>
+        <tests>
+            <macos:plist_test check="at least one" id="oval:scap:tst:030" version="1">
+                <macos:object object_ref="oval:scap:obj:031"/>
+                <macos:state state_ref="oval:scap:ste:031"/>
+            </macos:plist_test>
+        </tests>
+        <objects>
+            <macos:plist_object id="oval:scap:obj:031" version="1">
+                <macos:key>SMIMEEnabled</macos:key>
+                <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+            </macos:plist_object>
+        </objects>
+        <states>
+            <macos:plist_state id="oval:scap:ste:031" version="1">
+                <macos:value datatype="string" operation="equals">true</macos:value>
+            </macos:plist_state>
+        </states>
+    <definition class="compliance" id="oval:scap:def:032" version="1">
+      <metadata>
+        <title>Key "SubCalAccountUseSSL" = "true"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "SubCalAccountUseSSL" is = "true" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="SubCalAccountUseSSL = true" test_ref="oval:scap:tst:032"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:032" version="1">
+            <macos:object object_ref="oval:scap:obj:033"/>
+            <macos:state state_ref="oval:scap:ste:033"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:033" version="1">
+            <macos:key>SubCalAccountUseSSL</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:033" version="1">
+            <macos:value datatype="string" operation="equals">true</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:033" version="1">
+      <metadata>
+        <title>Key "AutoJoin" = "false"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+        <description>Check if  "AutoJoin" is = "false" .</description>
+      </metadata>
+      <criteria>
+        <criterion comment="AutoJoin = false" test_ref="oval:scap:tst:033"/>
+      </criteria>
+    </definition>
+    <tests>
+        <macos:plist_test check="at least one" id="oval:scap:tst:033" version="1">
+            <macos:object object_ref="oval:scap:obj:034"/>
+            <macos:state state_ref="oval:scap:ste:034"/>
+        </macos:plist_test>
+    </tests>
+    <objects>
+        <macos:plist_object id="oval:scap:obj:034" version="1">
+            <macos:key>AutoJoin</macos:key>
+            <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+        </macos:plist_object>
+    </objects>
+    <states>
+        <macos:plist_state id="oval:scap:ste:034" version="1">
+            <macos:value datatype="string" operation="equals">false</macos:value>
+        </macos:plist_state>
+    </states>
+    <definition class="compliance" id="oval:scap:def:034" version="1">
+      <metadata>
+        <title>Key "safariAcceptCookies" = "1"</title>
+        <affected family="macos">
+          <platform>Apple iOS 10 </platform>
+        </affected>
+        <reference ref_id="PLIST_CCE" source="CCE"/>
+<description>Check if  "safariAcceptCookies" is = "1" .</description>
+</metadata>
+<criteria>
+<criterion comment="safariAcceptCookies = 1" test_ref="oval:scap:tst:034"/>
+</criteria>
+</definition>
+<tests>
+      <macos:plist_test check="at least one" id="oval:scap:tst:034" version="1">
+       <macos:object object_ref="oval:scap:obj:035"/>
+      <macos:state state_ref="oval:scap:ste:035"/>
+      </macos:plist_test>
+</tests>
+<objects>
+      <macos:plist_object id="oval:scap:obj:035" version="1">
+      <macos:key>safariAcceptCookies</macos:key>
+      <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
+      </macos:plist_object>
+</objects>
+<states>
+      <macos:plist_state id="oval:scap:ste:035" version="1">
+      <macos:value datatype="string" operation="equals">1</macos:value>
+      </macos:plist_state>
+</states>
+</definitions>
+</oval_definitions>
