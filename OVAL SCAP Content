@@ -38,10 +38,6 @@
         <macos:value datatype="string" operation="equals">6</macos:value>
     </macos:plist_state>
 </states>
-
-
-
-
       <definition class="compliance" id="oval:scap:def:002" version="1">
           <metadata>
               <title>Key "maxFailedAttempts" = "10"</title>
@@ -59,7 +55,6 @@
           <macos:object object_ref="oval:scap:obj:032"/>
           <macos:state state_ref="oval:scap:ste:032"/>
       </macos:plist_test>
-
       </tests>
       <objects>
           <macos:plist_object id="oval:scap:obj:032" version="1">
@@ -71,10 +66,7 @@
             <macos:plist_state id="oval:scap:ste:032" version="1">
                 <macos:value datatype="string" operation="equals">10</macos:value>
             </macos:plist_state>
-
       </states>
-
-
     <definition class="compliance" id="oval:scap:def:003" version="1">
       <metadata>
         <title>Key "forceEncryptedBackup" = "true"</title>
@@ -104,7 +96,6 @@
             <macos:value datatype="string" operation="equals">true</macos:value>
         </macos:plist_state>
     </states>
-
     <definition class="compliance" id="oval:scap:def:004" version="1">
       <metadata>
         <title>Key "PreventMove" = "true"</title>
@@ -159,7 +150,6 @@
             <macos:key>maxGracePeriod</macos:key>
             <macos:filepath>/tmp/iphone_config_guide.mobileconfig</macos:filepath>
         </macos:plist_object>
-
     </objects>
     <states>
         <macos:plist_state id="oval:scap:ste:016" version="1">
