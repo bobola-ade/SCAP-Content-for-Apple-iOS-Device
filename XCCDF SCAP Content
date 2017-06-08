@@ -1,1 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Benchmark xmlns="http://checklists.nist.gov/xccdf/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdf="http://checklists.nist.gov/xccdf/1.1" xmlns:cpe="http://cpe.mitre.org/dictionary/2.0" xmlns:cpelang="http://cpe.mitre.org/language/2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" id="Apple_iOS" resolved="0" xml:lang="en-US" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ simpledc20021212.xsd http://www.w3.org/2000/09/xmldsig# xmldsig-core-schema.xsd http://cpe.mitre.org/dictionary/2.0 cpe-dictionary_2.0.xsd http://checklists.nist.gov/xccdf/1.1 xccdf-1.1.4.xsd http://cpe.mitre.org/language/2.0 cpe-language_2.0.xsd">
+  <status date="2017-04-08">draft</status>
+  <title />
+  <version>v0.0</version>
 
+  <Profile id="Corporate_Owned_Personally_Enabled">
+      <title>COPE</title>
+      <description>This sample profile includes Rules that might be
+          appropriate for a device owned and controlled by the enterprise.</description>
+      <select idref="disable_simple_value_for_passcode" selected="true"/>
+      <select idref="require_alphanumeric_value_for_passcode" selected="true"/>
+      <select idref="set_minimum_passcode_length" selected="true"/>
+      <select idref="set_minimum_number_of_complex_characters" selected="true"/>
+      <select idref="set_maximum_passcode_age" selected="true"/>
+      <select idref="set_auto_lock_time" selected="true"/>
+      <select idref="set_passcode_history" selected="true"/>
+      <select idref="set_grace_period_for_device_lock" selected="true"/>
+      <select idref="set_maximum_number_of_failed_attempts" selected="true"/>
+      <select idref="disable_installation_of_third_party_apps" selected="true"/>
+      <select idref="disable_camera" selected="true"/>
+      <select idref="disable_screen_capture" selected="true"/>
+      <select idref="disable_safari_autofill" selected="true"/>
+      <select idref="enable_safari_fraud_warning" selected="true"/>
+      <select idref="enable_safari_pop_up_blocking" selected="true"/>
+      <select idref="accept_cookies_from_visited_sites_only" selected="true"/>
+      <select idref="disable_icloud_backups" selected="true"/>
+      <select idref="disable_icloud_document_sync" selected="true"/>
+      <select idref="disable_icloud_photo_stream" selected="true"/>
+      <select idref="disable_sending_diagnostic_data_to_apple" selected="true"/>
+      <select idref="disable_user_acceptance_of_untrusted_tls_certificates" selected="true"/>
+      <select idref="force_encrypted_backups" selected="true"/>
+      <select idref="disable_auto_join_for_wi_fi" selected="true"/>
+      <select idref="prevent_moving_messages_between_mail_accounts" selected="true"/>
+      <select idref="enable_ssl_for_mail_connections" selected="true"/>
+      <select idref="enable_s_mime_support_for_mail_if_needed" selected="true"/>
+      <select idref="prevent_moving_messages_between_activesync_accounts" selected="true"/>
+      <select idref="enable_ssl_for_activesync_communications" selected="true"/>
+      <select idref="enable_s_mime_support_for_activesync_if_needed" selected="true"/>
+      <select idref="enable_ssl_for_ldap_connections" selected="true"/>
+      <select idref="enable_ssl_for_caldav_connections" selected="true"/>
+      <select idref="enable_ssl_for_subscribed_calendar_connections" selected="true"/>
+      <select idref="enable_ssl_for_carddav_connections" selected="true"/>
+      <select idref="sign_messages" selected="true"/>
+      <select idref="check_out_when_removed" selected="true"/>
+  </Profile>
+              <Group id="enable_passcode">
+                  <title>Passcode</title>
+                  <description>  </description>
+                  <Rule id="disable_simple_value_for_passcode" selected="false">
+                      <title>Ensure no simple Passcode</title>
+                      <description> </description>
+                      <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:018"/>
+                      </check>
+                  </Rule>
+                  <Rule id="require_alphanumeric_value_for_passcode" selected="false">
+                      <title>Ensure Alphanumeric Passcode</title>
+                      <description> </description>
+                     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:014"/>
+                      </check>
+                  </Rule>
+                  <Rule id="set_minimum_passcode_length" selected="false">
+                      <title>Ensure Minimum Passcode Length</title>
+                      <description> </description>
+                    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:001"/>
+                      </check>
+                  </Rule>
+                  <Rule id="set_minimum_number_of_complex_characters" selected="false">
+                      <title>Ensure Minimum Number of Complex Characters</title>
+                      <description>  </description>
+                      <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:019"/>
+                      </check>
+                  </Rule>
+                  <Rule id="set_maximum_passcode_age" selected="false">
+                      <title>Maximum Passcode Age</title>
+                      <description> </description>
+                      <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:010"/>
+                      </check>
+                  </Rule>
+                  <Rule id="set_passcode_history" selected="false">
+                      <title>PIN History</title>
+                      <description> </description>
+                    <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:007"/>
+                      </check>
+                  </Rule>
+                  <Rule id="set_grace_period_for_device_lock" selected="false">
+                      <title>Set Grace Period for Device Lock</title>
+                      <description> </description>
+                     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:005"/>
+                      </check>
+                  </Rule>
+                  <Rule id="set_maximum_number_of_failed_attempts" selected="false">
+                      <title>Maximum Number of Failed Attempts</title>
+                      <description>  </description>
+                      <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:002"/>
+                      </check>
+                  </Rule>
+          </Group>
+          <Group id="restrictions">
+              <title>Restrictions</title>
+              <description> </description>
+              <Rule id="disable_installation_of_third_party_apps" selected="false">
+                  <title>Disable Installation of Third-Party Apps</title>
+                  <description> </description>
+                   <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                      <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:020"/>
+                  </check>
+              </Rule>
+              <Rule id="disable_screen_capture" selected="false">
+                  <title>Disable Screen Capture</title>
+                  <description> </description>
+                 <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                      <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:008"/>
+                  </check>
+              </Rule>
+              <Group id="disable_or_configure_safari">
+                  <title>Safari</title>
+                  <description> </description>
+                  <Rule id="disable_safari_autofill" selected="false">
+                      <title>Disable Safari Autofill</title>
+                      <description> </description>
+                      <rationale> </rationale> <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:028"/>
+                      </check>
+                  </Rule>
+                  <Rule id="enable_safari_fraud_warning" selected="false">
+                      <title>Enable Safari Fraud Warning</title>
+                      <description> </description>
+                      <rationale> </rationale> <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:021"/>
+                      </check>
+                  </Rule>
+                  <Rule id="enable_safari_pop_up_blocking" selected="false">
+                      <title>Enable Safari Pop-up Blocking</title>
+                      <description> </description>
+                      <rationale> </rationale> <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:009"/>
+                      </check>
+                  </Rule>
+                  <Rule id="accept_cookies_from_visited_sites_only" selected="false">
+                      <title>Accept Cookies from Visited Sites Only</title>
+                      <description> </description>
+                      <rationale> </rationale> <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:034"/>
+                      </check>
+                  </Rule>
+              </Group>
+              <Group id="icloud_configuration">
+                  <title>iCloud configuration</title>
+                  <description> </description>
+                  <Rule id="disable_icloud_backups" selected="false">
+                      <title>Disable iCloud Backups</title>
+                      <description>  </description>
+                      <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:026"/>
+                      </check>
+                  </Rule>
+                  <Rule id="disable_icloud_document_sync" selected="false">
+                      <title>Disable iCloud Document Sync</title>
+                      <description> </description>
+                      <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:029"/>
+                      </check>
+                  </Rule>
+                  <Rule id="disable_icloud_photo_stream" selected="false">
+                      <title>Disable iCloud Photo Stream</title>
+                      <description>  </description>
+                      <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:025"/>
+                      </check>
+                  </Rule>
+              </Group>
+              <Group id="security_and_privacy">
+                  <title>Security and Privacy</title>
+                  <description> </description>
+                  <Rule id="disable_sending_diagnostic_data_to_apple" selected="false">
+                      <title>Disable Sending Diagnostic Data to Apple</title>
+                      <description> </description>
+                      <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:006"/>
+                      </check>
+                  </Rule>
+                  <Rule id="disable_user_acceptance_of_untrusted_tls_certificates" selected="false">
+                      <title>Disable User Acceptance of Untrusted TLS Certificates</title>
+                      <description> </description>
+                     <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:022"/>
+                      </check>
+                  </Rule>
+                  <Rule id="force_encrypted_backups" selected="false">
+                      <title>Force Encrypted Backups</title>
+                      <description> </description>
+                      <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                          <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:003"/>
+                      </check>
+                  </Rule>
+              </Group>
+          </Group>
+          <Group id="wi_fi">
+              <title>Wi-Fi</title>
+              <description> </description>
+              <Rule id="disable_auto_join_for_wi_fi" selected="false">
+                  <title>Disable Auto-Join for Wi-Fi</title>
+                  <description> </description>
+                <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                      <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:033"/>
+                  </check>
+              </Rule>
+          </Group>
+            <Group id="email">
+              <title>Email</title>
+              <description>  </description>
+              <Rule id="prevent_moving_messages_between_mail_accounts" selected="false">
+                  <title>Prevent Moving Messages between Mail Accounts</title>
+                  <description>  </description>
+                  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                      <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:004"/>
+                  </check>
+              </Rule>
+              <Rule id="enable_ssl_for_mail_connections" selected="false">
+                  <title>Enable SSL for Mail Connections</title>
+                  <description>  </description>
+                  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                      <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:015"/>
+                  </check>
+              </Rule>
+              <Rule id="enable_s_mime_support_for_mail_if_needed" selected="false">
+                  <title>Enable S/MIME Support for Mail if Needed</title>
+                  <description> </description>
+                  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                      <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:031"/>
+                  </check>
+              </Rule>
+          </Group>
+          <Group id="ldap">
+              <title>LDAP</title>
+              <Rule id="enable_ssl_for_ldap_connections" selected="false">
+                  <title>Enable SSL for LDAP Connections</title>
+                  <description> </description>
+                  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                      <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:016"/>
+                  </check>
+              </Rule>
+          </Group>
+          <Group id="caldav">
+              <title>CalDav</title>
+              <Rule id="enable_ssl_for_caldav_connections" selected="false">
+                  <title>Enable SSL for CalDav Connections</title>
+                  <description> </description>
+                  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                      <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:023"/>
+                  </check>
+              </Rule>
+          </Group>
+          <Group id="carddav">
+              <title>CardDav</title>
+              <Rule id="enable_ssl_for_carddav_connections" selected="false">
+                  <title>Enable SSL for CardDav Connections</title>
+                  <description> </description>
+                  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                      <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:011"/>
+                  </check>
+              </Rule>
+          </Group>
+          <Group id="mobile_device_management">
+              <title>Mobile Device Management</title>
+              <description> </description>
+              <Rule id="sign_messages" selected="false">
+                  <title>Sign Messages</title>
+                  <description> </description>
+                  <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                      <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:012"/>
+                  </check>
+              </Rule>
+              <Rule id="check_out_when_removed" selected="false">
+                  <title>Check Out When Removed</title>
+                  <description> </description>
+                 <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                      <check-content-ref href="apple_ios.oval.xml" name="oval:scap:def:013"/>
+                  </check>
+              </Rule>
+          </Group>
+</Benchmark>
